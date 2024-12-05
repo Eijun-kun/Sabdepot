@@ -259,7 +259,7 @@ function AdminWorkinProgressPage() {
                                 >
                                     <td>{product.productCode}</td>
                                     <td className='product-image-name'>
-                                        <img src={`http://localhost:8000/${product.imageUrl}`} alt={product.productName} />{' '}{product.productName}
+                                        <img src={`http://localhost:8001/${product.imageUrl}`} alt={product.productName} />{' '}{product.productName}
                                     </td>
                                     <td>{product.category}</td>
                                     {/* <td>{product.sizeUnit.slice(0, 1)} - {product.productSize}</td> */}

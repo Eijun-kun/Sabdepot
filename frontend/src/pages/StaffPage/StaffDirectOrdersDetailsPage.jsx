@@ -103,7 +103,7 @@ function StaffDirectOrdersDetailsPage() {
                                         style={{ cursor: 'pointer' }}
                                         >
                                             <img 
-                                            src={`http://localhost:8000/${relatedProduct.imageUrl}`} 
+                                            src={`http://localhost:8001/${relatedProduct.imageUrl}`} 
                                             alt={relatedProduct.productName} 
                                             />
                                         </li>
@@ -114,7 +114,7 @@ function StaffDirectOrdersDetailsPage() {
 
                         <div className='shop-products-right'>
                             <div className='product-image-container'>
-                                <img src={`http://localhost:8000/${product.imageUrl}`} alt={product.productName} />
+                                <img src={`http://localhost:8001/${product.imageUrl}`} alt={product.productName} />
                                 {
                                     shouldShowDiscount && (
                                         <div className='discount-badge'>

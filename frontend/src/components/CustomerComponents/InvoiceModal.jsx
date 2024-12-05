@@ -49,7 +49,7 @@ function InvoiceModal({isOpen, onClose, order, subtotal, shippingCost}) {
                                 <td>
                                     <div className='product-info'>
                                         <img
-                                            src={`http://localhost:8000/${item.productId.imageUrl}`}
+                                            src={`http://localhost:8001/${item.productId.imageUrl}`}
                                             alt={item.productId.productName}
                                         />
                                         <span>{item.productId.productName}</span>

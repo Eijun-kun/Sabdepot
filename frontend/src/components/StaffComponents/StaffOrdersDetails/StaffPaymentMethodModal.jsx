@@ -44,7 +44,7 @@ function StaffPaymentMethodModal({isOpen, onClose, order, handleApprove}) {
                                         {
                         order.paymentProof && (
                             <div className='payment-proof'>
-                                <img src={`http://localhost:8000/${order.paymentProof}`}alt="" />
+                                <img src={`http://localhost:8001/${order.paymentProof}`}alt="" />
                             </div>
                         )
                     }

@@ -12,9 +12,19 @@ require('./cronJobs/dailyInventoryReport');
 app.use(middleware);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log('Database connected'))
 .catch((error) => console.log('Database not connected', error));
+
+
+if(process.env.NODE_ENV === 'production'){
+    const __dirname = path.resolve();
+    app.use(express.static(path.join(__dirname, 'frontend/dist')));
+
+    app.get('*', (req, res)=>res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html')));
+} else {
+    app.get('/', (req, res)=>res.send('Server is Ready'));
+}
 
 //customer routes
 app.use('/customerAuth', require('./routers/CustomerRouters/CustomerAuthRouter'));
@@ -48,5 +58,5 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something broke!');
 });
 
-const port = 8000;
+const port = process.env.PORT || 8001;
 app.listen(port, () => console.log(`Server is running on ${port}`));

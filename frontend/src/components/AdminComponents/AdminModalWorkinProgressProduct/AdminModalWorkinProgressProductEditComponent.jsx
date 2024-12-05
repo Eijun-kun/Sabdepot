@@ -97,7 +97,7 @@ function AdminModalWorkinProgressProductEditComponent({isOpen, onClose, selected
                     <label htmlFor="file-input">
                         <img
                         src={selectedImage ? (typeof selectedImage === 'string' 
-                            ? `http://localhost:8000/${selectedImage}` 
+                            ? `http://localhost:8001/${selectedImage}` 
                             : URL.createObjectURL(selectedImage)) 
                             : uploadIcon}
                         alt="upload placeholder"

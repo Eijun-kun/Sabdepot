@@ -165,7 +165,7 @@ function CustomerProfilePage() {
             <div className='customer-profile-content'>
                 <div className='customer-profile-info'>
                     <img
-                    src={previewImage || (profilePicture ? `http://localhost:8000/${profilePicture}` : customerDefaultProfilePicture)}
+                    src={previewImage || (profilePicture ? `http://localhost:8001/${profilePicture}` : customerDefaultProfilePicture)}
                     alt="Profile"
                     className='customer-profile-picture'
                     onClick={handleImageClick}

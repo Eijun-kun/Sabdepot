@@ -82,7 +82,7 @@ function CustomerPayablePage() {
                                         <td>
                                             <img
                                             src={item.productId?.imageUrl
-                                                ? `http://localhost:8000/${item.productId.imageUrl}`
+                                                ? `http://localhost:8001/${item.productId.imageUrl}`
                                                 : 'https://via.placeholder.com/50'}
                                             alt={item.productId.productName}
                                             className='product-image'
@@ -104,7 +104,7 @@ function CustomerPayablePage() {
                                             {
                                                 order.paymentProof && order.paymentProof !== 'https://via.placeholder.com/50' &&
                                                 <img
-                                                src={`http://localhost:8000/${order.paymentProof}`}
+                                                src={`http://localhost:8001/${order.paymentProof}`}
                                                 alt='Proof of Payment'
                                                 className='proof-of-payment-image'
                                                 onClick={() => setSelectedOrder(order)}
@@ -156,12 +156,12 @@ function CustomerPayablePage() {
                         <h2>{selectedOrder.paymentStatus === 'Paid' ? 'Proof of Payment' : 'Proof of Payment'}</h2>
                         {
                             selectedOrder.paymentStatus === 'Paid' && (
-                                <img src={`http://localhost:8000/${selectedOrder.paymentProof}`} alt='Proof' className='modal-proof-image' />
+                                <img src={`http://localhost:8001/${selectedOrder.paymentProof}`} alt='Proof' className='modal-proof-image' />
                             )
                         }
                         {
                             selectedOrder.paymentStatus === 'Partial' && (
-                                <img src={`http://localhost:8000/${selectedOrder.paymentProof}`} alt='Proof' className='modal-proof-image' />
+                                <img src={`http://localhost:8001/${selectedOrder.paymentProof}`} alt='Proof' className='modal-proof-image' />
                             )
                         }
                         <button className='close-button' onClick={() => setSelectedOrder(null)}>Close</button>
